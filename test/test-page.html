@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Downloader - Test Suite</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    h1 { color: #1e293b; font-size: 22px; }
+    h2 { margin-top: 30px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; font-size: 16px; color: #334155; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 12px; }
+    .card { background: white; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; }
+    img, video { max-width: 100%; border-radius: 4px; }
+    .bg-box {
+      height: 160px;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600');
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+    }
+    canvas { background: #0f172a; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Media Downloader Test Page</h1>
+  <p>Test suite with diverse media formats (images, lazy assets, video, audio, SVGs, canvas, and links).</p>
+
+  <h2>1. Standard &amp; Responsive Images</h2>
+  <div class="grid">
+    <div class="card">
+      <h4>Standard Image</h4>
+      <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600" alt="Scenic Mountain">
+    </div>
+    <div class="card">
+      <h4>Lazy Loaded (data-src)</h4>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" data-src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200" alt="Tropical Beach">
+    </div>
+    <div class="card">
+      <h4>Hidden Container (Vimeo Thumbnail)</h4>
+      <div class="ContentAreaBackground_module_imgContainer__698d7036" style="display: none;"><img alt="video thumbnail" class="ContentAreaBackground_module_img__698d7036 ContentAreaBackground_module_loaded__698d7036" src="https://i.vimeocdn.com/video/1700401251-c091dfb530341219a9c29b6f1cfdcc6715e092311449c61dac72c9d02d2456c0-d?mw=80&amp;q=85"></div>
+      <p style="font-size: 11px; color: #64748b;">(Element has style="display: none;" on parent)</p>
+    </div>
+  </div>
+
+  <h2>2. HTML5 Video &amp; Poster</h2>
+  <div class="card">
+    <h4>Video Player</h4>
+    <video controls poster="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600">
+      <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+
+  <h2>3. HTML5 Audio</h2>
+  <div class="card">
+    <h4>Audio Track</h4>
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <h2>4. Inline SVG Vectors</h2>
+  <div class="card">
+    <h4>Inline Vector Graphic</h4>
+    <svg width="180" height="180" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="#2563eb" stroke="#1d4ed8" stroke-width="4" />
+      <polygon points="50,20 62,42 86,44 68,60 73,84 50,71 27,84 32,60 14,44 38,42" fill="#ffffff" />
+    </svg>
+  </div>
+
+  <h2>5. HTML5 Canvas Element</h2>
+  <div class="card">
+    <h4>Canvas Drawing</h4>
+    <canvas id="myCanvas" width="300" height="150"></canvas>
+  </div>
+
+  <h2>6. CSS Background Image</h2>
+  <div class="card">
+    <div class="bg-box"></div>
+  </div>
+
+  <h2>7. Media File Links</h2>
+  <div class="card">
+    <ul>
+      <li><a href="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200">High-Res Mountain Wallpaper (.jpg link)</a></li>
+      <li><a href="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">Big Buck Bunny (.mp4 link)</a></li>
+    </ul>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#1e293b';
+    ctx.fillRect(0, 0, 300, 150);
+    ctx.fillStyle = '#2563eb';
+    ctx.fillRect(20, 20, 260, 110);
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '16px -apple-system, sans-serif';
+    ctx.fillText('HTML5 Canvas Graphic', 60, 80);
+  </script>
+</body>
+</html>

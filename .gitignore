@@ -1,0 +1,9 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Node / Scratch scripts
+node_modules/
+temp_render.html
+test/run-test.js
+test/test-vimeo.js
