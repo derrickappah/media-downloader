@@ -2,6 +2,9 @@
 .DS_Store
 Thumbs.db
 
+# Archives & Builds
+*.zip
+
 # Node / Scratch scripts
 node_modules/
 temp_render.html
