@@ -1,15 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Media Downloader",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Download images, videos, audio, SVGs, and media streams from any webpage.",
   "permissions": [
     "activeTab",
     "scripting",
     "downloads",
     "storage",
-    "tabs",
-    "sidePanel"
+    "tabs"
   ],
   "host_permissions": [
     "<all_urls>"
@@ -32,9 +31,6 @@
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
-  },
-  "side_panel": {
-    "default_path": "popup/popup.html"
   },
   "background": {
     "service_worker": "scripts/background.js"

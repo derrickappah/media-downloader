@@ -183,10 +183,6 @@ chrome.runtime.onInstalled.addListener(() => {
     title: 'Media Downloader: Scan Page',
     contexts: ['page', 'image', 'video', 'audio', 'link']
   });
-
-  if (chrome.sidePanel && typeof chrome.sidePanel.setPanelBehavior === 'function') {
-    chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: false }).catch(() => {});
-  }
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
