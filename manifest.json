@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Media Downloader",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Download images, videos, audio, SVGs, and media streams from any webpage.",
   "permissions": [
     "activeTab",
