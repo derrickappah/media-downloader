@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Media Downloader",
-  "version": "1.2.2",
-  "description": "Download images, videos, audio, SVGs, and media streams from any webpage.",
+  "name": "MediaFetch - Media Downloader",
+  "version": "1.2.3",
+  "description": "Easily discover, preview, and save media assets from the active webpage.",
   "permissions": [
     "activeTab",
     "scripting",
@@ -13,18 +13,9 @@
   "host_permissions": [
     "<all_urls>"
   ],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["scripts/content.js"],
-      "run_at": "document_idle",
-      "all_frames": true,
-      "match_about_blank": true
-    }
-  ],
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "Media Downloader",
+    "default_title": "MediaFetch",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
